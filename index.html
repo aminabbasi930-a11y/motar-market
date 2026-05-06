@@ -8,42 +8,60 @@
 body {
   font-family: Arial;
   margin: 0;
-  background: #f2f2f2;
+  background: #f4f4f4;
 }
 
+/* هدر */
 header {
-  background: #e53935;
+  background: #d32f2f;
   color: white;
   padding: 20px;
   text-align: center;
   font-size: 22px;
-  font-weight: bold;
 }
 
+/* جستجو */
 .search {
   padding: 10px;
   text-align: center;
 }
 
 .search input {
-  width: 80%;
-  padding: 10px;
-  border-radius: 8px;
+  width: 90%;
+  padding: 12px;
+  border-radius: 10px;
   border: 1px solid #ccc;
 }
 
+/* دسته‌ها */
+.categories {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  gap: 10px;
+}
+
+.cat {
+  background: white;
+  padding: 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+/* کارت‌ها */
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 15px;
   padding: 10px;
 }
 
 .card {
   background: white;
-  border-radius: 12px;
+  border-radius: 15px;
   padding: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .card img {
@@ -59,11 +77,20 @@ header {
 button {
   width: 100%;
   padding: 10px;
-  background: #e53935;
+  background: #d32f2f;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 5px;
+}
+
+/* فوتر */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+  margin-top: 20px;
 }
 </style>
 
@@ -76,7 +103,14 @@ button {
 </header>
 
 <div class="search">
-<input type="text" placeholder="جستجوی موتر...">
+<input type="text" placeholder="جستجوی موتر، قیمت، برند...">
+</div>
+
+<div class="categories">
+<div class="cat">🚙 SUV</div>
+<div class="cat">🚗 Sedan</div>
+<div class="cat">🏍 موتور</div>
+<div class="cat">🚐 وانت</div>
 </div>
 
 <div class="container">
@@ -85,24 +119,28 @@ button {
 <img src="https://via.placeholder.com/400x200">
 <h3>Toyota Corolla 2010</h3>
 <p class="price">500,000 افغانی</p>
-<button>تماس</button>
+<button>تماس با فروشنده</button>
 </div>
 
 <div class="card">
 <img src="https://via.placeholder.com/400x200">
-<h3>Toyota Prado 2015</h3>
+<h3>Prado 2015</h3>
 <p class="price">1,200,000 افغانی</p>
-<button>تماس</button>
+<button>تماس با فروشنده</button>
 </div>
 
 <div class="card">
 <img src="https://via.placeholder.com/400x200">
 <h3>BMW X5 2018</h3>
 <p class="price">2,500,000 افغانی</p>
-<button>تماس</button>
+<button>تماس با فروشنده</button>
 </div>
 
 </div>
+
+<footer>
+© 2026 Motor Market | همه حقوق محفوظ است
+</footer>
 
 </body>
 </html>
