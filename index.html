@@ -8,10 +8,9 @@
 body {
   font-family: Arial;
   margin: 0;
-  background: #f4f4f4;
+  background: #f1f3f6;
 }
 
-/* هدر */
 header {
   background: #d32f2f;
   color: white;
@@ -20,7 +19,7 @@ header {
   font-size: 22px;
 }
 
-/* جستجو */
+/* search */
 .search {
   padding: 10px;
   text-align: center;
@@ -33,26 +32,9 @@ header {
   border: 1px solid #ccc;
 }
 
-/* دسته‌ها */
-.categories {
-  display: flex;
-  overflow-x: auto;
-  padding: 10px;
-  gap: 10px;
-}
-
-.cat {
-  background: white;
-  padding: 10px;
-  border-radius: 20px;
-  white-space: nowrap;
-  box-shadow: 0 2px 5px #ccc;
-}
-
-/* کارت‌ها */
+/* cards */
 .container {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 15px;
   padding: 10px;
 }
@@ -62,6 +44,11 @@ header {
   border-radius: 15px;
   padding: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
 }
 
 .card img {
@@ -72,19 +59,29 @@ header {
 .price {
   color: green;
   font-weight: bold;
+  font-size: 18px;
 }
 
-button {
-  width: 100%;
+/* buttons */
+.btn {
+  display: block;
+  text-align: center;
   padding: 10px;
-  background: #d32f2f;
-  color: white;
-  border: none;
+  margin-top: 8px;
   border-radius: 10px;
-  margin-top: 5px;
+  text-decoration: none;
+  color: white;
 }
 
-/* فوتر */
+.buy {
+  background: #d32f2f;
+}
+
+.whatsapp {
+  background: #25D366;
+}
+
+/* footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -103,14 +100,7 @@ footer {
 </header>
 
 <div class="search">
-<input type="text" placeholder="جستجوی موتر، قیمت، برند...">
-</div>
-
-<div class="categories">
-<div class="cat">🚙 SUV</div>
-<div class="cat">🚗 Sedan</div>
-<div class="cat">🏍 موتور</div>
-<div class="cat">🚐 وانت</div>
+<input type="text" placeholder="جستجوی موتر...">
 </div>
 
 <div class="container">
@@ -119,27 +109,24 @@ footer {
 <img src="https://via.placeholder.com/400x200">
 <h3>Toyota Corolla 2010</h3>
 <p class="price">500,000 افغانی</p>
-<button>تماس با فروشنده</button>
+
+<a class="btn buy" href="#">جزئیات</a>
+<a class="btn whatsapp" href="https://wa.me/93700000000">تماس واتساپ</a>
 </div>
 
 <div class="card">
 <img src="https://via.placeholder.com/400x200">
 <h3>Prado 2015</h3>
 <p class="price">1,200,000 افغانی</p>
-<button>تماس با فروشنده</button>
-</div>
 
-<div class="card">
-<img src="https://via.placeholder.com/400x200">
-<h3>BMW X5 2018</h3>
-<p class="price">2,500,000 افغانی</p>
-<button>تماس با فروشنده</button>
+<a class="btn buy" href="#">جزئیات</a>
+<a class="btn whatsapp" href="https://wa.me/93700000000">تماس واتساپ</a>
 </div>
 
 </div>
 
 <footer>
-© 2026 Motor Market | همه حقوق محفوظ است
+© Motor Market | ساخته شده در افغانستان
 </footer>
 
 </body>
