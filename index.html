@@ -8,27 +8,42 @@
 body {
   font-family: Arial;
   margin: 0;
-  background: #f5f5f5;
+  background: #f2f2f2;
 }
 
 header {
-  background: #ff3f00;
+  background: #e53935;
   color: white;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.search {
+  padding: 10px;
+  text-align: center;
+}
+
+.search input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
   padding: 10px;
 }
 
 .card {
   background: white;
-  margin: 10px;
+  border-radius: 12px;
   padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .card img {
@@ -42,12 +57,13 @@ header {
 }
 
 button {
-  background: #ff3f00;
+  width: 100%;
+  padding: 10px;
+  background: #e53935;
   color: white;
   border: none;
-  padding: 10px;
-  width: 100%;
-  border-radius: 5px;
+  border-radius: 8px;
+  margin-top: 5px;
 }
 </style>
 
@@ -59,19 +75,30 @@ button {
 🚗 Motor Market افغانستان
 </header>
 
+<div class="search">
+<input type="text" placeholder="جستجوی موتر...">
+</div>
+
 <div class="container">
 
 <div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>کرولا 2010</h3>
+<img src="https://via.placeholder.com/400x200">
+<h3>Toyota Corolla 2010</h3>
 <p class="price">500,000 افغانی</p>
 <button>تماس</button>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>پرادو 2015</h3>
+<img src="https://via.placeholder.com/400x200">
+<h3>Toyota Prado 2015</h3>
 <p class="price">1,200,000 افغانی</p>
+<button>تماس</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/400x200">
+<h3>BMW X5 2018</h3>
+<p class="price">2,500,000 افغانی</p>
 <button>تماس</button>
 </div>
 
