@@ -85,23 +85,38 @@ button {
 <button onclick="addCar()">ثبت</button>
 
 <script>
+
+// وقتی صفحه باز شد، موترهای قبلی را نشان بده
+window.onload = function() {
+  let data = JSON.parse(localStorage.getItem("cars")) || [];
+  data.forEach(car => showCar(car));
+};
+
 function addCar() {
   let name = document.getElementById("name").value;
   let price = document.getElementById("price").value;
   let image = document.getElementById("image").value;
 
+  let car = {name, price, image};
+
+  let data = JSON.parse(localStorage.getItem("cars")) || [];
+  data.push(car);
+  localStorage.setItem("cars", JSON.stringify(data));
+
+  showCar(car);
+}
+
+function showCar(car) {
   let box = document.createElement("div");
   box.className = "card";
 
   box.innerHTML = `
-    <img src="${image}">
-    <h3>${name}</h3>
-    <p class="price">${price} افغانی</p>
+    <img src="${car.image}">
+    <h3>${car.name}</h3>
+    <p class="price">${car.price} افغانی</p>
   `;
 
   document.getElementById("list").appendChild(box);
 }
-</script>
 
-</body>
-</html>
+</script>
