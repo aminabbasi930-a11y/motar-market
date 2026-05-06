@@ -1,261 +1,53 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <title>Motor Market</title>
-  <style>
-    body { font-family: Arial; margin: 0; background: #f5f5f5; direction: rtl; }
-    header { background: #111; color: white; padding: 15px; text-align: center; }
-    .container { width: 90%; margin: auto; }
-
-    .car-card {
-      background: white;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 10px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-
-    .form-box {
-      background: white;
-      padding: 15px;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0;
-    }
-
-    button {
-      background: green;
-      color: white;
-      padding: 10px;
-      border: none;
-      width: 100%;
-      cursor: pointer;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>🚗 Motor Market Afghanistan</h1>
-  <p>خرید و فروش موتر به ساده‌ترین شکل</p>
-</header>
-
-<div class="container">
-
-  <h2>موترهای موجود</h2>
-  <div id="carList">
-
-    <div class="car-card">
-      <h3>Toyota Corolla 2015</h3>
-      <p>قیمت: 600,000 افغانی</p>
-      <p>کابل</p>
-    </div>
-
-    <div class="car-card">
-      <h3>Honda Civic 2018</h3>
-      <p>قیمت: 850,000 افغانی</p>
-      <p>کابل</p>
-    </div>
-
-  </div>
-
-  <div class="form-box">
-    <h2>ثبت موتر جدید</h2>
-
-    <input id="name" placeholder="نام موتر" />
-    <input id="price" placeholder="قیمت" />
-    <input id="location" placeholder="ولایت" />
-
-    <button onclick="addCar()">ثبت آگهی</button>
-  </div>
-
-</div>
-
-<script>
-function addCar() {
-  let name = document.getElementById('name').value;
-  let price = document.getElementById('price').value;
-  let location = document.getElementById('location').value;
-
-  if(!name || !price || !location){
-    alert("لطفاً همه فیلدها را پر کنید");
-    return;
-  }
-
-  let card = document.createElement("div");
-  card.className = "car-card";
-  card.innerHTML = `
-    <h3>${name}</h3>
-    <p>قیمت: ${price} افغانی</p>
-    <p>${location}</p>
-  `;
-
-  document.getElementById("carList").appendChild(card);
-
-  document.getElementById('name').value = "";
-  document.getElementById('price').value = "";
-  document.getElementById('location').value = "";
-}
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <title>Motor Market</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #f4f6f8;
-      direction: rtl;
-    }
-
-    header {
-      background: #ff5722;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .container {
-      width: 90%;
-      margin: auto;
-      padding: 10px;
-    }
-
-    .card {
-      background: white;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .price {
-      color: green;
-      font-weight: bold;
-    }
-
-    button {
-      background: #ff5722;
-      color: white;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  🚗 دیجی‌موتر افغانستان
-</header>
-
-<div class="container">
-
-  <h3>موترهای جدید</h3>
-
-  <div class="card">
-    <h3>Toyota Corolla 2017</h3>
-    <p class="price">650,000 افغانی</p>
-    <p>کابل</p>
-  </div>
-
-  <div class="card">
-    <h3>Honda Civic 2019</h3>
-    <p class="price">900,000 افغانی</p>
-    <p>کابل</p>
-  </div>
-
-  <h3>ثبت موتر</h3>
-
-  <input placeholder="نام موتر">
-  <input placeholder="قیمت">
-  <input placeholder="ولایت">
-
-  <button>ثبت آگهی</button>
-
-</div>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="fa">
-<head>
 <meta charset="UTF-8">
 <title>Motor Market</title>
 
 <style>
-body{
+body {
   font-family: Arial;
-  background:#f4f6f8;
-  margin:0;
-  direction:rtl;
+  margin: 0;
+  background: #f5f5f5;
 }
 
-header{
-  background:#ff5722;
-  color:white;
-  padding:20px;
-  text-align:center;
-  font-size:22px;
+header {
+  background: #ff3f00;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
 }
 
-.container{
-  width:90%;
-  margin:auto;
+.container {
+  padding: 10px;
 }
 
-.card{
-  background:white;
-  padding:15px;
-  margin:10px 0;
-  border-radius:10px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+.card {
+  background: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
 }
 
-.price{
-  color:green;
-  font-weight:bold;
+.card img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-input{
-  width:100%;
-  padding:10px;
-  margin:5px 0;
-  border-radius:8px;
-  border:1px solid #ccc;
+.price {
+  color: green;
+  font-weight: bold;
 }
 
-button{
-  width:100%;
-  padding:10px;
-  background:#ff5722;
-  color:white;
-  border:none;
-  border-radius:8px;
+button {
+  background: #ff3f00;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
 }
 </style>
 
@@ -263,58 +55,27 @@ button{
 
 <body>
 
-<header>🚗 دیجی موتر افغانستان</header>
+<header>
+🚗 Motor Market افغانستان
+</header>
 
 <div class="container">
 
-<h3>موترهای موجود</h3>
-
-<div id="list">
-
-  <div class="card">
-    <h3>Toyota Corolla 2017</h3>
-    <p class="price">650,000 افغانی</p>
-    <p>کابل</p>
-  </div>
-
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>کرولا 2010</h3>
+<p class="price">500,000 افغانی</p>
+<button>تماس</button>
 </div>
 
-<h3>ثبت موتر جدید</h3>
-
-<input id="name" placeholder="نام موتر">
-<input id="price" placeholder="قیمت">
-<input id="location" placeholder="ولایت">
-
-<button onclick="addCar()">ثبت آگهی</button>
-
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>پرادو 2015</h3>
+<p class="price">1,200,000 افغانی</p>
+<button>تماس</button>
 </div>
 
-<script>
-function addCar(){
-  let name = document.getElementById("name").value;
-  let price = document.getElementById("price").value;
-  let location = document.getElementById("location").value;
-
-  if(!name || !price || !location){
-    alert("لطفاً همه فیلدها را پر کنید");
-    return;
-  }
-
-  let box = document.createElement("div");
-  box.className = "card";
-  box.innerHTML = `
-    <h3>${name}</h3>
-    <p class="price">${price} افغانی</p>
-    <p>${location}</p>
-  `;
-
-  document.getElementById("list").appendChild(box);
-
-  document.getElementById("name").value = "";
-  document.getElementById("price").value = "";
-  document.getElementById("location").value = "";
-}
-</script>
+</div>
 
 </body>
 </html>
