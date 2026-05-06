@@ -36,11 +36,6 @@ img{
   border-radius:10px;
 }
 
-.price{
-  color:green;
-  font-weight:bold;
-}
-
 input{
   width:95%;
   padding:10px;
@@ -57,6 +52,11 @@ button{
   border-radius:8px;
 }
 
+.price{
+  color:green;
+  font-weight:bold;
+}
+
 .delete{
   background:black;
   color:white;
@@ -65,18 +65,17 @@ button{
   margin-top:5px;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>🚗 Motor Market</header>
 
-<input id="search" placeholder="🔍 جستجو..." onkeyup="searchCar()">
+<input id="search" placeholder="🔍 جستجو موتر..." onkeyup="searchCar()">
 
 <div class="container" id="list"></div>
 
-<h3 style="padding:10px;">ثبت موتر</h3>
+<h3 style="padding:10px;">➕ ثبت موتر</h3>
 
 <input id="name" placeholder="نام موتر">
 <input id="price" placeholder="قیمت">
@@ -95,9 +94,9 @@ window.onload = function(){
 function addCar(){
   let car = {
     id: Date.now(),
-    name: document.getElementById("name").value,
-    price: document.getElementById("price").value,
-    image: document.getElementById("image").value
+    name: name.value,
+    price: price.value,
+    image: image.value
   };
 
   cars.push(car);
@@ -124,18 +123,20 @@ function renderCar(car){
 }
 
 function deleteCar(id){
-  cars = cars.filter(car => car.id !== id);
+  cars = cars.filter(c => c.id !== id);
   localStorage.setItem("cars", JSON.stringify(cars));
   document.getElementById(id).remove();
 }
 
 function searchCar(){
-  let text = document.getElementById("search").value.toLowerCase();
+  let txt = search.value.toLowerCase();
   let items = document.getElementsByClassName("card");
 
   for(let i=0;i<items.length;i++){
-    let content = items[i].innerText.toLowerCase();
-    items[i].style.display = content.includes(text) ? "block" : "none";
+    items[i].style.display =
+      items[i].innerText.toLowerCase().includes(txt)
+      ? "block"
+      : "none";
   }
 }
 
