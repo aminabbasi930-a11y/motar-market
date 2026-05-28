@@ -96,6 +96,11 @@ font-weight:bold;
 margin-bottom:10px;
 }
 
+.model{
+color:#444;
+margin-bottom:5px;
+}
+
 .desc{
 color:#555;
 margin-bottom:10px;
@@ -141,17 +146,34 @@ margin-top:20px;
 
 <div class="top">
 
-<input type="text" id="search" placeholder="🔍 جستجوی موتر..." onkeyup="searchCars()">
+<input type="text"
+id="search"
+placeholder="🔍 جستجوی موتر..."
+onkeyup="searchCars()">
 
-<input type="text" id="name" placeholder="نام موتر">
+<input type="text"
+id="name"
+placeholder="نام موتر">
 
-<input type="text" id="price" placeholder="قیمت">
+<input type="text"
+id="model"
+placeholder="مدل موتر">
 
-<input type="text" id="image" placeholder="لینک عکس">
+<input type="text"
+id="price"
+placeholder="قیمت">
 
-<input type="text" id="desc" placeholder="توضیحات">
+<input type="file"
+id="image">
 
-<button class="add-btn" onclick="addCar()">➕ ثبت موتر</button>
+<input type="text"
+id="desc"
+placeholder="توضیحات">
+
+<button class="add-btn"
+onclick="addCar()">
+➕ ثبت موتر
+</button>
 
 </div>
 
@@ -163,14 +185,18 @@ Motor Market © 2026
 
 <script>
 
-let cars = JSON.parse(localStorage.getItem("cars")) || [];
+let cars =
+JSON.parse(localStorage.getItem("cars")) || [];
 
 window.onload = function(){
 renderAll();
 };
 
 function saveData(){
-localStorage.setItem("cars", JSON.stringify(cars));
+localStorage.setItem(
+"cars",
+JSON.stringify(cars)
+);
 }
 
 function renderAll(){
@@ -180,6 +206,7 @@ document.getElementById("list").innerHTML = "";
 cars.forEach(car => {
 
 let card = document.createElement("div");
+
 card.className = "card";
 
 card.innerHTML = `
@@ -190,9 +217,17 @@ card.innerHTML = `
 
 <h2>${car.name}</h2>
 
-<div class="price">${car.price} افغانی</div>
+<div class="model">
+📅 مدل: ${car.model}
+</div>
 
-<div class="desc">${car.desc}</div>
+<div class="price">
+💰 ${car.price} افغانی
+</div>
+
+<div class="desc">
+${car.desc}
+</div>
 
 <div class="actions">
 
@@ -213,7 +248,9 @@ onclick="deleteCar(${car.id})">
 
 `;
 
-document.getElementById("list").appendChild(card);
+document
+.getElementById("list")
+.appendChild(card);
 
 });
 
@@ -221,22 +258,36 @@ document.getElementById("list").appendChild(card);
 
 function addCar(){
 
-let name = document.getElementById("name").value;
-let price = document.getElementById("price").value;
-let image = document.getElementById("image").value;
-let desc = document.getElementById("desc").value;
+let file =
+document.getElementById("image").files[0];
 
-if(name==="" || price==="" || image===""){
-alert("همه خانه‌ها را پر کنید");
+if(!file){
+alert("عکس انتخاب کنید");
 return;
 }
 
+let reader = new FileReader();
+
+reader.onload = function(){
+
 let car = {
+
 id:Date.now(),
-name:name,
-price:price,
-image:image,
-desc:desc
+
+name:
+document.getElementById("name").value,
+
+model:
+document.getElementById("model").value,
+
+price:
+document.getElementById("price").value,
+
+desc:
+document.getElementById("desc").value,
+
+image:reader.result
+
 };
 
 cars.push(car);
@@ -246,9 +297,14 @@ saveData();
 renderAll();
 
 document.getElementById("name").value="";
+document.getElementById("model").value="";
 document.getElementById("price").value="";
-document.getElementById("image").value="";
 document.getElementById("desc").value="";
+document.getElementById("image").value="";
+
+};
+
+reader.readAsDataURL(file);
 
 }
 
@@ -264,13 +320,22 @@ renderAll();
 
 function searchCars(){
 
-let value = document.getElementById("search").value.toLowerCase();
+let value =
+document
+.getElementById("search")
+.value
+.toLowerCase();
 
-let cards = document.querySelectorAll(".card");
+let cards =
+document.querySelectorAll(".card");
 
 cards.forEach(card => {
 
-if(card.innerText.toLowerCase().includes(value)){
+if(
+card.innerText
+.toLowerCase()
+.includes(value)
+){
 card.style.display = "block";
 }else{
 card.style.display = "none";
